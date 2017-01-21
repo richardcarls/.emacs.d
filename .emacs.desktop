@@ -1,0 +1,223 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Sep 11 22:14:43 2016
+;; Desktop file format version 208
+;; Emacs version 25.1.50.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22486 3987 757020 526000) (desktop . "208") "rick@richardcarls-com-dev" nil nil ((((minibuffer . t) (tty-type . "screen-256color") (tty . "/dev/tty") (display-type . color) (background-mode . dark) (foreground-color . "unspecified-fg") (cursor-color . "white") (background-color . "unspecified-bg") (font . "tty") (height . 38) (width . 126) (modeline . t) (unsplittable) (menu-bar-lines . 1) (frameset--id . "A6D6-C187-FBF5-3A0C") (frameset--mini t)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 4) (min-pixel-width . 20) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 4) (min-pixel-height-safe . 1) (min-pixel-width-safe . 4)) hc (pixel-width . 126) (pixel-height . 37) (total-width . 126) (total-height . 37) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 63) (pixel-height . 37) (total-width . 63) (total-height . 37) (normal-height . 1.0) (normal-width . 0.5) (buffer "init.el" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 2252) (start . 1175))) (leaf (last . t) (pixel-width . 63) (pixel-height . 37) (total-width . 63) (total-height . 37) (normal-height . 1.0) (normal-width . 0.5) (buffer "*terminal<1>*" (selected) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 39423) (start . 38679)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("NoteContext" "doc" "props" "doc" "properties" "data" "$col" "$collection" "data" "properties" "]) {" "properties" "(properties" "noteProperties" "data" "comment"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/init.el" "~/.emacs" "/projects/node-indieutil/lib/determine-representative-card.js" "/projects/node-indieutil/lib/../index.js" "/projects/node-indieutil/lib/determine-author.js" "/projects/node-indieutil/lib/determine-mentions.js" "/projects/node-indieutil/lib/get-entry.js" "/projects/connect-micropub/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/models/note-context.js" "/projects/richardcarls-com/app/views/includes/comment.nunj.html" "/projects/richardcarls-com/etc/apt/sources.list.d/" "/projects/richardcarls-com/app/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/models/note-lean.js" "/projects/node-indieutil/lib/determine-post-types.js" "/projects/node-indieutil/lib/jf2-fetch-refs.js" "/projects/node-indieutil/lib/../test/package.test.js" "/projects/node-indieutil/lib/fetch-mf2.js" "/projects/node-indieutil/lib/entry-to-cite.js" "/projects/node-indieutil/lib/" "/projects/node-indieutil/lib/to-jf2.js" "/projects/richardcarls-com/app/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/../docker-compose.yml" "/projects/richardcarls-com/app/config/dev/redis.js" "/projects/richardcarls-com/redis/../mongo/mongod.yml" "/projects/richardcarls-com/redis/redis.conf" "/projects/node-indieutil/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/models/person.js" "/projects/node-indieutil/.git/COMMIT_EDITMSG" "/projects/node-indieutil/test/mocks/example12.json" "/projects/node-indieutil/test/mocks/jony-ive.json" "/projects/node-indieutil/.git/COMMIT_EDITMSG" "/projects/node-indieutil/test/mocks/../to-jf2.test.js" "/projects/node-indieutil/test/mocks/" "/projects/node-indieutil/test/mocks/jony-ive.html" "/projects/richardcarls-com/app/.git/COMMIT_EDITMSG" "/projects/node-indieutil/.gitignore" "/projects/richardcarls-com/app/models/note-context.js" "/projects/connect-webmention/.git/COMMIT_EDITMSG" "/projects/connect-webmention/test/mocks/" "/projects/connect-webmention/test/mocks/valid-source.html" "/projects/connect-webmention/test/" "/projects/connect-webmention/test/package.test.js" "/projects/connect-webmention/.projectile" "/projects/connect-webmention/index.js" "/projects/connect-webmention/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/routes/webmention.js" "/projects/richardcarls-com/app/.git/COMMIT_EDITMSG" "/projects/passport-indieauth/.git/COMMIT_EDITMSG" "/projects/richardcarls-com/app/views/includes/note.nunj.html" "/projects/richardcarls-com/app/views/notes/../" "/projects/richardcarls-com/app/views/home/../notes/notes-single.nunj.html" "/projects/richardcarls-com/app/views/notes/" "/projects/richardcarls-com/app/views/home/../notes/notes-list.nunj.html" "/projects/richardcarls-com/app/routes/notes.js" "/projects/connect-micropub/.git/COMMIT_EDITMSG" "/projects/micropub-express/lib/" "/projects/micropub-express/lib/micropub.js" "/projects/micropub-express/test/create.test.js" "/projects/micropub-express/../richardcarls-com-old/" "/projects/micropub-express/test/../index.js" "/projects/micropub-express/test/" "/projects/micropub-express/test/routes.test.js" "/projects/richardcarls-com/app/cd ../.." "/projects/richardcarls-com-old/config/../views/" "/projects/richardcarls-com/app/scss/components/_toolbar.scss" "~/.emacs.d/" "/projects/richardcarls-com/app/views/includes/dashboard.nunj.html" "/projects/richardcarls-com-old/views/home/../../config/" "/projects/richardcarls-com-old/views/includes/.." "/projects/richardcarls-com/app/views/includes/" "/projects/richardcarls-com/app/views/includes/sidebar.nunj.html" "/projects/richardcarls-com/app/views/../../../richardcarls-com-old/views" "/projects/richardcarls-com/app/public_http/assets/" "/projects/richardcarls-com/app/views/../../../richardcarls-com-old/" "/projects/richardcarls-com/mongo/entrypoint.sh" "/projects/richardcarls-com/mongo/Dockerfile" "/projects/richardcarls-com/mongo/../docker-compose.yml" "/projects/richardcarls-com/mongo/entrypoint.sh" "/projects/richardcarls-com/mongo/Dockerfile" "/projects/richardcarls-com/mongo/startup.sh" "/projects/known/RichardCarls/theme.ini" "/projects/richardcarls-com-theme/templates/default/solo/../richardcarls/shell/" "/projects/richardcarls-com-theme/templates/default/solo/shell/.." "/projects/richardcarls-com-theme/.gitignore" "/projects/passport-indieauth/.git/COMMIT_EDITMSG" "/projects/passport-indieauth/package.json" "/projects/richardcarls-com/app/app.js" "/projects/passport-indieauth/.git/COMMIT_EDITMSG" "/projects/passport-indieauth/test/strategy.state.test.js" "/projects/passport-indieauth/test/strategy.code.test.js" "/projects/passport-indieauth/test/mocks/homepage-token-endpoint.html" "/projects/passport-indieauth/test/mocks/homepage-auth-endpoint.html" "/projects/passport-indieauth/test/mocks/homepage-both-endpoints.html" "/projects/passport-indieauth/test/mocks/homepage-no-endpoints.html" "/projects/passport-indieauth/.git/COMMIT_EDITMSG" "/projects/nunjucks-autolink/.git/COMMIT_EDITMSG" "/projects/nunjucks-autolink/.codeclimate.yml" "/projects/nunjucks-autolink/.eslintrc" "/projects/nunjucks-autolink/.git/COMMIT_EDITMSG" "/projects/nunjucks-autolink/.travis.yml"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/rick/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(auto-complete-mode flycheck-mode projectile-mode)
+  2252
+  '(2085 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (2084 1724 1724 1145 952 918 825))))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/app/models/note.js"
+  "note.js"
+  'js2-mode
+  '(auto-complete-mode flycheck-mode projectile-mode)
+  5320
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/app/routes/notes.js"
+  "notes.js"
+  'js2-mode
+  '(auto-complete-mode flycheck-mode projectile-mode)
+  421
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/app/routes/webmention.js"
+  "webmention.js"
+  'js2-mode
+  '(auto-complete-mode flycheck-mode projectile-mode auto-revert-mode)
+  881
+  '(825 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring (799 1249 1254 1986 1794 1299 1899 1794 1794 1249 1986 1828 1090 408 143 354))))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/app/views/notes/notes-list.nunj.html"
+  "notes-list.nunj.html"
+  'web-mode
+  '(auto-complete-mode flycheck-mode projectile-mode auto-revert-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/docker-compose.yml"
+  "docker-compose.yml"
+  'yaml-mode
+  '(flycheck-mode projectile-mode)
+  237
+  '(25 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1253 1404 855 1082 1354))))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/app/Dockerfile"
+  "Dockerfile"
+  'dockerfile-mode
+  '(flycheck-mode projectile-mode auto-revert-mode)
+  73
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/etc/apt/sources.list.d/docker.list"
+  "docker.list"
+  'fundamental-mode
+  '(projectile-mode)
+  58
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/projects/richardcarls-com/redis/redis.conf"
+  "redis.conf"
+  'conf-space-mode
+  '(flycheck-mode projectile-mode)
+  266
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "home"
+  'dired-mode
+  '(projectile-mode)
+  102
+  '(nil nil)
+  t
+  '("/home/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "rick"
+  'dired-mode
+  '(projectile-mode)
+  158
+  '(nil nil)
+  t
+  '("/home/rick/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(projectile-mode)
+  333
+  '(nil nil)
+  t
+  '("/home/rick/.emacs.d/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/rick/.tmux.conf"
+  ".tmux.conf"
+  'conf-unix-mode
+  '(flycheck-mode projectile-mode)
+  50
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "lib"
+  'dired-mode
+  '(projectile-mode)
+  344
+  '(nil nil)
+  t
+  '("/projects/richardcarls-com-old/lib/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "richardcarls-com-old"
+  'dired-mode
+  '(projectile-mode)
+  650
+  '(nil nil)
+  t
+  '("/projects/richardcarls-com-old/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "projects"
+  'dired-mode
+  '(projectile-mode)
+  256
+  '(nil nil)
+  t
+  '("/projects/")
+  nil
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "/"
+  'dired-mode
+  '(projectile-mode)
+  1110
+  '(nil nil)
+  t
+  '("/")
+  nil
+  '((mark-ring nil)))
+
