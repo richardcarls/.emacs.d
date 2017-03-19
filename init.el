@@ -28,6 +28,10 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; Disable splash/startup buffer
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+
 ;; Packages
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
