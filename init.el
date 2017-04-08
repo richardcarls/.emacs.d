@@ -32,6 +32,9 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 
+;; Disable dialogs in GUI
+(setq use-dialog-box nil)
+
 ;; Packages
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
