@@ -1,4 +1,4 @@
-;;; init.el --- rick
+;;; init.el --- emacs 24.5.1
 
 ;;; Commentary:
 ;; Dev config

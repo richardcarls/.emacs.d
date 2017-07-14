@@ -1,9 +1,10 @@
 ;;; mustache-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "mustache-mode" "mustache-mode.el" t)
+;;;### (autoloads nil "mustache-mode" "mustache-mode.el" (22888 12090
+;;;;;;  0 0))
 ;;; Generated autoloads from mustache-mode.el
 
 (autoload 'mustache-mode "mustache-mode" "\

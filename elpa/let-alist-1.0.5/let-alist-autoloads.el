@@ -1,10 +1,9 @@
 ;;; let-alist-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "let-alist" "let-alist.el" (22761 8881 472979
-;;;;;;  237000))
+;;;### (autoloads nil "let-alist" "let-alist.el" (22888 11962 0 0))
 ;;; Generated autoloads from let-alist.el
 
 (autoload 'let-alist "let-alist" "\
@@ -38,7 +37,7 @@ displayed in the example above.
 
 \(fn ALIST &rest BODY)" nil t)
 
-(function-put 'let-alist 'lisp-indent-function '1)
+(put 'let-alist 'lisp-indent-function '1)
 
 ;;;***
 
