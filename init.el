@@ -51,6 +51,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.socket\\'" . systemd-mode))
 
 ;; Keybindings
 (global-set-key (kbd "C-c =") 'er/expand-region)
@@ -162,8 +163,8 @@
  '(web-mode-enable-block-face t)
  '(web-mode-enable-current-element-highlight t)
  '(web-mode-markup-indent-offset 2)
- '(web-mode-script-padding 0)
- '(web-mode-style-padding 0)
+ '(web-mode-script-padding 2)
+ '(web-mode-style-padding 2)
  '(weechat-color-list
    (quote
     (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
