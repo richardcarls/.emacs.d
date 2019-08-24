@@ -1,118 +1,124 @@
-;;; init.el --- emacs 24.5.1
-
+;;; init.el --- rick's config
 ;;; Commentary:
-;; Dev config
-
 ;;; Code:
+(set-language-environment 'utf-8)
 
-;; load-path
-(add-to-list 'load-path
-             (expand-file-name
-              (concat user-emacs-directory "lisp")))
+;; editor
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+(setq ring-bell-function 'ignore)
+(tool-bar-mode -1) ;; giant gui toolbar
+(setq gc-cons-threshold 50000000) ;; 50MB
 
-;; store all backup and autosave files in the tmp dir
+(line-number-mode t)
+(column-number-mode t)
+(blink-cursor-mode -1)
+
+(when (>= emacs-major-version 24) (electric-pair-mode 1))
+(show-paren-mode 1)
+
+
+(setq-default tab-width 4)
+(setq-default indent-line-function 4)
+(setq-default indent-tabs-mode nil)
+(setq tab-always-indent 'complete)
+
+(setq require-final-newline t)
+
+;; backup / auto-save
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; Turn off bell
-(setq ring-bell-function 'ignore)
-
-;;set all coding systems to utf-8
-(set-language-environment 'utf-8)
-(set-default-coding-systems 'utf-8)
-(setq locale-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-selection-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-
-;; Disable splash/startup buffer
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-
-;; Disable dialogs in GUI
-(setq use-dialog-box nil)
-
-;; Packages
-(require 'package) ;; You might already have this line
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+;; package archives
+(require 'package)
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
 
-;; Manual package
+;; global modes
+(require 'projectile)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-;; Auto modes
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.socket\\'" . systemd-mode))
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face tabs empty trailing lines-tail))
 
-;; Keybindings
-(global-set-key (kbd "C-c =") 'er/expand-region)
-(global-set-key (kbd "C-c -") 'er/contract-region)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
-;; Customization
+(require 'flycheck)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
+(require 'yasnippet)
+(add-hook 'after-init-hook 'yas-global-mode)
+
+(require 'eldoc)
+(add-hook 'after-init-hook 'global-eldoc-mode)
+
+;; lsp
+(require 'lsp-mode)
+(setq lsp-prefer-flymake nil)
+(setq-default company-lsp-filter-candidates t)
+(setq-default company-lsp-match-candidate-predicate 'company-lsp-match-candidate-prefix)
+
+;; misc
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C--") 'er/contract-region)
+
+;; javascript
+(add-hook 'js2-mode-hook 'lsp)
+
+;; rust
+(add-hook 'rust-mode-hook 'lsp)
+;;(add-hook 'rust-mode-hook #'racer-mode)
+;;(add-hook 'racer-mode-hook #'eldoc-mode)
+
+;; c++
+(add-hook 'c-mode-hook #'lsp)
+(add-hook 'c++-mode-hook #'lsp)
+(setq-default c-basic-offset 4)
+(setq-default c-offsets-alist '((arglist-intro    . +)
+                                (arglist-close    . 0)
+                                (brace-list-intro . +)
+                                (statement-case-intro . 0)
+                                (case-label       . +)
+                                (inlambda         . 0)
+                                (innamespace      . 0)))
+
+(require 'cquery)
+(setq cquery-executable "/usr/bin/cquery")
+
+;; customizations
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(before-save-hook (quote (whitespace-cleanup)))
- '(blink-cursor-mode t)
- '(compilation-message-face (quote default))
- '(css-indent-offset 2)
- '(custom-enabled-themes nil)
- '(flycheck-checkers
+ '(custom-enabled-themes (quote (zerodark)))
+ '(custom-safe-themes
    (quote
-    (ada-gnat asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd dockerfile-hadolint elixir-dogma emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert groovy haml handlebars haskell-stack-ghc haskell-ghc haskell-hlint html-tidy javascript-standard javascript-eslint javascript-jshint javascript-gjslint javascript-jscs json-jsonlint json-python-json less lua-luacheck lua perl perl-perlcritic php php-phpmd php-phpcs processing protobuf-protoc pug puppet-parser puppet-lint python-flake8 python-pylint python-pycompile r-lintr racket rpm-rpmlint markdown-mdl rst-sphinx rst ruby-rubocop ruby-rubylint ruby ruby-jruby rust-cargo rust scala scala-scalastyle scheme-chicken scss-lint sass/scss-sass-lint sass scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim slim-lint sql-sqlint systemd-analyze tex-chktex tex-lacheck texinfo typescript-tslint verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
- '(flycheck-disabled-checkers nil)
- '(flycheck-eslintrc ".eslintrc*")
- '(flycheck-global-modes t)
- '(global-auto-complete-mode t)
- '(global-flycheck-mode t)
- '(indent-tabs-mode nil)
- '(inhibit-startup-screen t)
- '(initial-major-mode (quote projectile-global-mode))
- '(js-indent-level 2)
- '(js-switch-indent-offset 2)
- '(js2-include-node-externs t)
- '(js2-mode-show-parse-errors nil)
- '(js2-mode-show-strict-warnings nil)
- '(magit-diff-use-overlays nil)
+    ("1068ae7acf99967cc322831589497fee6fb430490147ca12ca7dd3e38d9b552a" "e39ff005e524c331b08d613109bff0b55fc21c64914c4a243faa70f330015389" "08ef1356470a9d3bf363ffab0705d90f8a492796e9db489936de4bde6a4fdb19" default)))
  '(package-selected-packages
    (quote
-    (dracula-theme flycheck expand-region color-theme-modern color-theme-approximate scss-mode dockerfile-mode php-mode ac-php json-reformat web-mode solarized-theme tern tern-auto-complete jinja2-mode js2-mode markdown-mode mustache-mode multi-web-mode flycheck-tip autumn-light-theme color-theme hydandata-light-theme frame-restore multi-term syslog-mode flx-ido itail yaml-mode pastelmac-theme neotree magit projectile jsx-mode json-mode js-doc flyparens flymake-yaml flymake-sass flymake-json flymake-jslint flymake-jshint flymake-css ac-js2 ac-html)))
- '(standard-indent 2)
- '(term-default-bg-color nil)
- '(vc-annotate-background nil)
- '(vc-annotate-background-mode nil)
- '(vc-annotate-very-old-color nil)
- '(web-mode-auto-close-style 1)
- '(web-mode-code-indent-offset 2)
- '(web-mode-css-indent-offset 2)
- '(web-mode-enable-auto-closing t)
- '(web-mode-enable-auto-indentation t)
- '(web-mode-enable-auto-pairing t)
- '(web-mode-enable-auto-quoting t)
- '(web-mode-enable-block-face t)
- '(web-mode-enable-current-element-highlight t)
- '(web-mode-markup-indent-offset 2)
- '(web-mode-script-padding 2)
- '(web-mode-style-padding 2))
+    (js2-mode shell-pop expand-region dap-mode lsp-treemacs flymake flycheck-clang-analyzer flycheck-clang-tidy flycheck-clangcheck yasnippet helm-lsp lsp-ui cmake-mode company-lsp cquery lsp-mode flycheck company-c-headers cargo projectile zerodark-theme company-glsl company-racer company racer rust-mode)))
+ '(shell-pop-autocd-to-working-dir nil)
+ '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
+ '(shell-pop-universal-key "C-`")
+ '(shell-pop-window-position "bottom"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(term ((t (:inherit default :background "black" :foreground "#839496"))))
- '(web-mode-html-tag-bracket-face ((t nil))))
+ )
 
 (provide 'init)
+
 ;;; init.el ends here
