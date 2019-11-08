@@ -1,5 +1,11 @@
+emojis
+eshell
+transient
+
 auto-save-list
 ac-comphist.dat
 
 projectile-bookmarks.eld
 projectile.cache
+
+*session*

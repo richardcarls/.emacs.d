@@ -17,6 +17,7 @@
 (when (>= emacs-major-version 24) (electric-pair-mode 1))
 (show-paren-mode 1)
 
+(when (>= emacs-major-version 26) (global-display-line-numbers-mode 1))
 
 (setq-default tab-width 4)
 (setq-default indent-line-function 4)
@@ -40,6 +41,12 @@
 (package-initialize)
 
 ;; global modes
+(require 'emojify)
+(add-hook 'after-init-hook #'global-emojify-mode)
+
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
 (require 'projectile)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -60,8 +67,13 @@
 (require 'eldoc)
 (add-hook 'after-init-hook 'global-eldoc-mode)
 
+(require 'eshell-toggle)
+(setq eshell-toggle-size-fraction 4)
+(setq eshell-toggle-run-command nil)
+(global-set-key (kbd "C-`") 'eshell-toggle)
+
 ;; lsp
-(require 'lsp-mode)
+(require 'lsp)
 (setq lsp-prefer-flymake nil)
 (setq-default company-lsp-filter-candidates t)
 (setq-default company-lsp-match-candidate-predicate 'company-lsp-match-candidate-prefix)
@@ -71,8 +83,14 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C--") 'er/contract-region)
 
-;; javascript
-(add-hook 'js2-mode-hook 'lsp)
+(require 'magit)
+(global-set-key (kbd "C-g") 'magit-status)
+
+;; web
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
+(add-hook 'html-mode-hook 'lsp)
+(add-hook 'html-mode-hook #'(lambda nil (setq-default sgml-xml-mode t)))
+(add-hook 'javascript-mode 'lsp)
 
 ;; rust
 (add-hook 'rust-mode-hook 'lsp)
@@ -100,17 +118,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (zerodark)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(custom-safe-themes
    (quote
-    ("1068ae7acf99967cc322831589497fee6fb430490147ca12ca7dd3e38d9b552a" "e39ff005e524c331b08d613109bff0b55fc21c64914c4a243faa70f330015389" "08ef1356470a9d3bf363ffab0705d90f8a492796e9db489936de4bde6a4fdb19" default)))
+    ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "45a8b89e995faa5c69aa79920acff5d7cb14978fbf140cdd53621b09d782edcf" "86704574d397606ee1433af037c46611fb0a2787e8b6fd1d6c96361575be72d2" default)))
+ '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (js2-mode shell-pop expand-region dap-mode lsp-treemacs flymake flycheck-clang-analyzer flycheck-clang-tidy flycheck-clangcheck yasnippet helm-lsp lsp-ui cmake-mode company-lsp cquery lsp-mode flycheck company-c-headers cargo projectile zerodark-theme company-glsl company-racer company racer rust-mode)))
- '(shell-pop-autocd-to-working-dir nil)
- '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell)))))
- '(shell-pop-universal-key "C-`")
- '(shell-pop-window-position "bottom"))
+    (doom-modeline magit actionscript-mode handlebars-sgml-mode company-emoji emojify color-theme-sanityinc-tomorrow xresources-theme json-mode eshell-toggle flycheck-rust cargo rust-mode yasnippet web-mode projectile lsp-ui flycheck expand-region cquery company-lsp))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
