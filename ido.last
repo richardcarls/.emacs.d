@@ -1,0 +1,30 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/root/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/root/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/root/.emacs.d/" (25238 34862 512000 0) "elpa/" "projectile.cache" ".git/" "eshell/" "../" "./" "snippets/" "projectile-bookmarks.eld" ".lsp-session-v1" "README.md" ".gitignore" "auto-save-list/" "init.el" "transient/")
+
+ ("/root/" (25238 31497 400000 0) ".cargo/" "caddy/" "../" "./" "gotty-startup.sh" ".gotty" ".local/" ".rustup/" ".profile" ".emacs.d/" ".bash_history" "projects/")
+
+ ("/userdata/projects/polyserve/" (25238 20348 908000 0) ".projectile" "LICENSE-APACHE" ".git/" "../" "./" "Cargo.toml" "example-site/" "src/" "README.md" "LICENSE-MIT" "Cargo.lock" ".gitignore" "target/")
+
+ ("/userdata/projects/polyserve/src/" (25238 34990 140000 0) "../" "./" "main.rs")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
