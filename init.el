@@ -70,6 +70,7 @@
 (global-set-key (kbd "C-g") 'magit-status)
 
 ;; web
+(setq-default lsp-html-server-command-args (list (substring (shell-command-to-string "which html-languageserver") 0 -1)))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 (add-hook 'html-mode-hook 'lsp)
 (add-hook 'html-mode-hook #'(lambda nil (setq-default sgml-xml-mode 1)))
