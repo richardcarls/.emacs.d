@@ -25,8 +25,6 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-always-indent 'complete)
 
-(setq require-final-newline 1)
-
 ;; backup / auto-save
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -70,7 +68,8 @@
 (global-set-key (kbd "C-g") 'magit-status)
 
 ;; web
-(setq-default lsp-html-server-command-args (list (substring (shell-command-to-string "which html-languageserver") 0 -1)))
+;(setq-default lsp-html-server-command-args (list (substring (shell-command-to-string "which html-languageserver") 0 -1)))
+                                        ;(setq-default lsp-html-server-command-args "html-languageserver")
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 (add-hook 'html-mode-hook 'lsp)
 (add-hook 'html-mode-hook #'(lambda nil (setq-default sgml-xml-mode 1)))
